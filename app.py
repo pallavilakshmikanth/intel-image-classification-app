@@ -3,8 +3,13 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 
-# Load model
-model = tf.keras.models.load_model("intel_image_classifier.h5")
+from tensorflow.keras.models import load_model
+
+model = load_model(
+    "intel_image_classifier.h5",
+    compile=False
+)
+
 
 class_names = ['buildings', 'forest', 'glacier', 'mountain', 'sea', 'street']
 
